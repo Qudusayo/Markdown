@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Markdown (.md)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<nav>
+        <h2>MarkDown(.md)</h2>
+        <ul>
+            <h2>From Qudusayo</h2>
+        </ul>
+    </nav>
+	<textarea id="markdown" oninput="this.editor.update()" contenteditable># H1
+
+> Loveth
+
+
+</textarea>
+	<div id="output-html"></div>
+
+	<script src="markdown.js"></script>
+    <script>
+      function Editor(input, preview) {
+        this.update = function () {
+          preview.innerHTML = markdown.toHTML(input.value);
+        };
+        input.editor = this;
+        this.update();
+      }
+      var $ = function (id) { return document.getElementById(id); };
+      new Editor($("markdown"), $("output-html"));
+    </script>
+</body>
+</html>
